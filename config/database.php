@@ -3,6 +3,7 @@
 use Illuminate\Support\Str;
 use Pdo\Mysql;
 
+$DATABASE_URL=parse_url(url:'DATABASE_URL');
 return [
 
     /*
@@ -17,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION','pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -87,11 +88,11 @@ return [
           'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DB_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => DATABASE['host'],
+            'port' => DATABASE['port'],
+            'database' =>ltrim($DATABASE_URL['path'], '/'),
+            'username' => $DATABASE_URL['user'],
+            'password' => $DATABASE_URL['pass'],
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
