@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation – FormFlow AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8faff;
+            color: #1a1a2e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(108, 99, 255, 0.08);
+            border: 1px solid rgba(108, 99, 255, 0.06);
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #6C63FF, #3A2D9A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1.25rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a2e;
+        }
+        p, li {
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #6C63FF;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+        pre {
+            background: #1e1e2f;
+            color: #e4e4f0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 14px;
+            overflow-x: auto;
+            margin: 1.25rem 0;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            line-height: 1.6;
+        }
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+            font-size: 0.9rem;
+        }
+        .note {
+            background: #f0edff;
+            border-left: 4px solid #6C63FF;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        .note strong {
+            color: #6C63FF;
+        }
+        .step {
+            counter-increment: step;
+            margin-bottom: 1.5rem;
+        }
+        .step::before {
+            content: counter(step) ".";
+            font-weight: 700;
+            color: #6C63FF;
+            margin-right: 0.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #6C63FF;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.7rem;
+            border-radius: 60px;
+            margin-right: 0.5rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>🚀 Installation Guide</h1>
+    <div class="subtitle">FormFlow AI – AI‑Powered Form Builder SaaS</div>
+
+    <p>Thank you for purchasing <strong>FormFlow AI</strong>! This guide will walk you through the installation process step by step. The application is built on <strong>Laravel 12</strong> and requires a standard web server with PHP and MySQL.</p>
+
+    <div class="note">
+        <strong>⚡ Quick Tip:</strong> If you have <code>vendor/</code> folder included in the package, you can skip <code>composer install</code> and jump to step 4.
+    </div>
+
+    <h2>📋 Requirements</h2>
+    <ul>
+        <li><strong>PHP</strong> 8.2 or higher (with extensions: <code>BCMath</code>, <code>Ctype</code>, <code>Fileinfo</code>, <code>JSON</code>, <code>Mbstring</code>, <code>OpenSSL</code>, <code>PDO</code>, <code>Tokenizer</code>, <code>XML</code>, <code>GD</code>)</li>
+        <li><strong>MySQL</strong> 8.0 or higher (or MariaDB 10.5+)</li>
+        <li><strong>Composer</strong> (if you need to install dependencies)</li>
+        <li><strong>Node.js</strong> (only if you want to rebuild frontend assets with Vite)</li>
+        <li><strong>Web Server</strong> (Apache / Nginx with PHP-FPM)</li>
+    </ul>
+
+    <h2>📦 Installation Steps</h2>
+
+    <ol style="list-style-type: none; padding-left: 0; counter-reset: step;">
+        <li class="step"><strong>Upload files</strong><br>
+            Upload the entire contents of the <code>FormFlowAI/</code> folder to your web server's document root (e.g., <code>public_html</code> or <code>/var/www/html</code>).
+        </li>
+
+        <li class="step"><strong>Set permissions</strong><br>
+            Make sure the following directories are writable by your web server:
+            <pre><code>chmod -R 755 storage bootstrap/cache
+chmod -R 755 public/uploads   (if the folder exists)</code></pre>
+            On shared hosting, you can do this via cPanel File Manager (right‑click → Change Permissions).
+        </li>
+
+        <li class="step"><strong>Install dependencies (if vendor folder is missing)</strong><br>
+            Run Composer to install all PHP dependencies:
+            <pre><code>composer install --optimize-autoloader --no-dev</code></pre>
+            If you have the <code>vendor/</code> folder already, you can skip this step.
+        </li>
+
+        <li class="step"><strong>Create environment file</strong><br>
+            Copy <code>.env.example</code> to <code>.env</code>:
+            <pre><code>cp .env.example .env</code></pre>
+            Or rename it manually via file manager.
+        </li>
+
+        <li class="step"><strong>Generate application key</strong><br>
+            This sets the encryption key for your application:
+            <pre><code>php artisan key:generate</code></pre>
+        </li>
+
+        <li class="step"><strong>Configure database</strong><br>
+            Open <code>.env</code> in a text editor and update these values:
+            <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password</code></pre>
+            Also set your <strong>Gemini API key</strong>, <strong>mail settings</strong>, and optional <strong>Stripe/Twilio</strong> keys if you plan to use those features.
+        </li>
+
+        <li class="step"><strong>Run migrations & seeders</strong><br>
+            This creates all tables and populates the default templates and subscription plans:
+            <pre><code>php artisan migrate --seed</code></pre>
+        </li>
+
+        <li class="step"><strong>Create storage link</strong><br>
+            This allows public access to uploaded files (e.g., file uploads in forms):
+            <pre><code>php artisan storage:link</code></pre>
+        </li>
+
+        <li class="step"><strong>Build frontend assets (optional)</strong><br>
+            If you want to rebuild the CSS/JS assets using Vite:
+            <pre><code>npm install
+npm run build</code></pre>
+            If you don't need to modify the frontend, you can skip this – the pre‑built assets are already in the <code>public/</code> folder.
+        </li>
+
+        <li class="step"><strong>Set up cron job (for scheduled tasks)</strong><br>
+            Add this to your server's crontab:
+            <pre><code>* * * * * php /path/to/your/project/artisan schedule:run >> /dev/null 2>&1</code></pre>
+            This is required for any scheduled notifications or background jobs.
+        </li>
+
+        <li class="step"><strong>Configure web server</strong><br>
+            Point your domain or subdomain to the <code>public/</code> directory.
+            <ul>
+                <li><strong>Apache</strong>: The <code>.htaccess</code> file inside <code>public/</code> handles routing automatically.</li>
+                <li><strong>Nginx</strong>: Use this location block:
+                    <pre><code>location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}</code></pre>
+                </li>
+            </ul>
+        </li>
+
+        <li class="step"><strong>Verify installation</strong><br>
+            Visit your site's URL in a browser. You should see the splash page with the “Login” and “Sign Up” buttons.
+            <ul>
+                <li>Register a new user → you'll be taken to the dashboard.</li>
+                <li>Start creating forms and exploring features.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+
+    <h2>🛠️ Troubleshooting</h2>
+
+    <ul>
+        <li><strong>“No application encryption key” error:</strong> Run <code>php artisan key:generate</code>.</li>
+        <li><strong>“403 Forbidden” on public files:</strong> Check folder permissions; <code>storage/</code> must be writable.</li>
+        <li><strong>Database connection error:</strong> Double‑check your <code>.env</code> database credentials.</li>
+        <li><strong>404 on routes (Nginx):</strong> Ensure your server is configured to pass requests to <code>index.php</code>.</li>
+        <li><strong>AI Generator not working:</strong> Verify your <code>GEMINI_API_KEY</code> in <code>.env</code> is valid.</li>
+        <li><strong>Mail not sending:</strong> Check SMTP settings in <code>.env</code> and ensure your mail provider allows external SMTP.</li>
+    </ul>
+
+    <div class="note">
+        <strong>🔐 Security Note:</strong> For production, set <code>APP_ENV=production</code> and <code>APP_DEBUG=false</code> in your <code>.env</code> file. Always keep your <code>.env</code> file outside of public access.
+    </div>
+
+    <h2>📞 Support</h2>
+    <p>If you encounter any issues, please contact us via the support page on CodeCanyon/Codester. We'll be happy to help.</p>
+
+    <hr>
+
+    <div class="footer">
+        <strong>FormFlow AI</strong> – Built with ❤️ for the future of forms.
+        <br>
+        <small>&copy; 2026 All rights reserved.</small>
+    </div>
+
+</div>
+</body>
+</html>

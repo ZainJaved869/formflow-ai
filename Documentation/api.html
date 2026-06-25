@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>API Documentation – FormFlow AI</title></head>
+<body>
+<h1>API Reference</h1>
+<p>All API endpoints are prefixed with <code>/api/</code> and use Bearer token authentication (Sanctum).</p>
+<h2>Authentication</h2>
+<ul>
+  <li><code>POST /auth/register</code> – Register a new user.</li>
+  <li><code>POST /auth/login</code> – Login and receive a token.</li>
+  <li><code>POST /auth/forgot-password</code> – Request a password reset.</li>
+  <li><code>POST /auth/reset-password</code> – Reset password with token.</li>
+</ul>
+<h2>Forms</h2>
+<ul>
+  <li><code>GET /forms</code> – List user forms.</li>
+  <li><code>POST /forms</code> – Create a new form.</li>
+  <li><code>GET /forms/{id}</code> – Get form details.</li>
+  <li><code>PUT /forms/{id}</code> – Update form.</li>
+  <li><code>DELETE /forms/{id}</code> – Delete form.</li>
+  <li><code>POST /forms/{id}/duplicate</code> – Duplicate form.</li>
+  <li><code>POST /forms/ai-generate</code> – Generate fields via AI.</li>
+</ul>
+<h2>Submissions</h2>
+<ul>
+  <li><code>GET /submissions</code> – List all submissions.</li>
+  <li><code>GET /submissions/{id}</code> – Get submission details.</li>
+  <li><code>DELETE /submissions/{id}</code> – Delete submission.</li>
+  <li><code>GET /submissions/{id}/export/{format}</code> – Export (csv, excel, pdf).</li>
+</ul>
+<h2>Webhooks</h2>
+<ul>
+  <li><code>GET /webhooks</code> – List webhooks.</li>
+  <li><code>POST /webhooks</code> – Create webhook.</li>
+  <li><code>PUT /webhooks/{id}</code> – Update webhook.</li>
+  <li><code>DELETE /webhooks/{id}</code> – Delete webhook.</li>
+  <li><code>POST /webhooks/{id}/test</code> – Test webhook.</li>
+</ul>
+</body>
+</html>
